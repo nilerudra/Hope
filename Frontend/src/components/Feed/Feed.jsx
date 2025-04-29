@@ -1,20 +1,19 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./Feed.css";
 import axios from "axios";
-
-
 
 function Feed() {
   const [data, setData] = useState([]);
   useEffect(() => {
-  axios.get("http://localhost:3000/feed")
-  .then((res)=>{
-    setData(res.data);
-  })
-  .catch((error) => {
-   alert("error accored ",error)
-  })
-},[]);
+    axios
+      .get("https://hope-v129.onrender.com/feed")
+      .then((res) => {
+        setData(res.data);
+      })
+      .catch((error) => {
+        alert("error accored ", error);
+      });
+  }, []);
 
   return (
     <div className="feed-container">
@@ -23,17 +22,13 @@ function Feed() {
           <div className="post-header">
             <div className="user-info">
               <h4>{post.postTitle}</h4>
-             
             </div>
           </div>
           <div className="post-content">
             <p></p>
             {post.postImg && <img src={post.postImg} alt="Post" />}
-            <div className="hashtags">
-              {post.postTags}
-            </div>
+            <div className="hashtags">{post.postTags}</div>
           </div>
-          
         </div>
       ))}
     </div>

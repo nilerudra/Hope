@@ -66,7 +66,9 @@ export default function CommunityList({ onSelectCommunity }) {
     const fetchUserCommunity = async () => {
       if (userId) {
         axios
-          .get(`http://localhost:3000/ngo/${userId}/connected-ngo-details`)
+          .get(
+            `https://hope-v129.onrender.com/ngo/${userId}/connected-ngo-details`
+          )
           .then((response) => {
             setCommunityList(response.data.connectedNgos);
             console.log(response.data.connectedNgos);
@@ -76,7 +78,7 @@ export default function CommunityList({ onSelectCommunity }) {
           });
       } else if (ngoId) {
         axios
-          .get(`http://localhost:3000/ngo/${ngoId}`)
+          .get(`https://hope-v129.onrender.com/ngo/${ngoId}`)
           .then((response) => {
             setCommunityList([response.data]);
             console.log(response.data);

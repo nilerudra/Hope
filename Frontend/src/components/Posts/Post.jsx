@@ -1,28 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import './post.css';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "./post.css";
 import { ref, uploadBytes, getDownloadURL, listAll } from "firebase/storage";
 import { storage } from "./firebase";
 import { v4 as uuidv4 } from "uuid";
 
 function Post() {
   const [imageUpload, setImageUpload] = useState(null);
-  const [imageName, setImageName] = useState('');
+  const [imageName, setImageName] = useState("");
   const [imageUrls, setImageUrls] = useState([]);
-  const [postContent, setPostContent] = useState('');
-  const [tags, setTags] = useState('');
+  const [postContent, setPostContent] = useState("");
+  const [tags, setTags] = useState("");
 
   const imagesListRef = ref(storage, "images/");
 
   const uploadFile = async () => {
     if (!imageUpload) return;
     const imageRef = ref(storage, `images/${imageUpload.name + uuidv4()}`);
-    
+
     uploadBytes(imageRef, imageUpload).then((snapshot) => {
       getDownloadURL(snapshot.ref).then((url) => {
         setImageUrls((prev) => [...prev, url]);
         submitPost("" + url); // Pass the URL to submit post data
-       
       });
     });
   };
@@ -42,11 +41,11 @@ function Post() {
       postTitle: postContent,
       postImg: imageUrl,
       postTags: tags,
-      userId:localStorage.getItem("user_id")||localStorage.getItem("ngo_id")
+      userId: localStorage.getItem("user_id") || localStorage.getItem("ngo_id"),
     };
 
     try {
-      await axios.post('http://localhost:3000/posts', postData); // replace with your backend URL
+      await axios.post("https://hope-v129.onrender.com/posts", postData); // replace with your backend URL
       alert("Your work is posted");
       handleCancel();
     } catch (error) {
@@ -55,16 +54,16 @@ function Post() {
   };
 
   const handleCancel = () => {
-    setPostContent('');
-    setTags('');
+    setPostContent("");
+    setTags("");
     setImageUpload(null);
-    setImageName(''); // Reset image name on cancel
+    setImageName(""); // Reset image name on cancel
   };
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     setImageUpload(file);
-    setImageName(file ? file.name : ''); // Set the image name
+    setImageName(file ? file.name : ""); // Set the image name
   };
 
   return (
@@ -82,10 +81,16 @@ function Post() {
         />
         <div className="post-actions">
           <label htmlFor="file-upload" className="custom-file-upload">
-            <input type="file" required id="file-upload" onChange={handleFileChange} />
+            <input
+              type="file"
+              required
+              id="file-upload"
+              onChange={handleFileChange}
+            />
             Add Image/Video
           </label>
-          {imageName && <span className="file-name">{imageName}</span>} {/* Display selected file name */}
+          {imageName && <span className="file-name">{imageName}</span>}{" "}
+          {/* Display selected file name */}
         </div>
         <div className="post-tags">
           <input
@@ -105,7 +110,6 @@ function Post() {
           Post
         </button>
       </div>
-     
     </div>
   );
 }

@@ -17,7 +17,7 @@ const crypto = require("crypto");
 const Donar = require("../src/models/donar");
 const postRoute = require("./routes/postRoute");
 const notificationRoute = require("./routes/notifications");
-const taskRouter=require("./routes/task");
+const taskRouter = require("./routes/task");
 
 const http = require("http");
 const socketIo = require("socket.io");
@@ -35,7 +35,7 @@ app.use(cors());
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: "http://localhost:3001", // Change this to your React app port
+    origin: "*", // Change this to your React app port
     methods: ["GET", "POST"],
     credentials: true,
   },
@@ -68,17 +68,23 @@ const redirectUrl = "http://localhost:3000/status";
 
 const successUrl = "http://localhost:3001/dashboard/explore";
 const failureUrl = "http://localhost:3001/payment-failure";
-const data = { name: "", mobileNumber: "", amount: "", email: "" ,userId:"",ngoIds:[]};
+const data = {
+  name: "",
+  mobileNumber: "",
+  amount: "",
+  email: "",
+  userId: "",
+  ngoIds: [],
+};
 
 app.post("/create-order", async (req, res) => {
-  
-    const { name, mobileNumber, amount, email ,userId,ngoIds} = req.body;
+  const { name, mobileNumber, amount, email, userId, ngoIds } = req.body;
   data.name = name;
   data.mobileNumber = mobileNumber;
   data.amount = amount;
   data.email = email;
-  data.userId=userId;
-  data.ngoIds=ngoIds;
+  data.userId = userId;
+  data.ngoIds = ngoIds;
   const orderId = uuidv4();
 
   //payment
@@ -184,7 +190,7 @@ app.use("/posts", postRoute);
 app.use("/ngo", registerNgo);
 app.use("/feed", feedRouter);
 app.use("/notification", notificationRoute);
-app.use("/assign-task",taskRouter)
+app.use("/assign-task", taskRouter);
 
 // Start the server
 server.listen(PORT, () => {

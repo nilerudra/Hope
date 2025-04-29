@@ -65,7 +65,7 @@ const NgoSignUp = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3000/ngo/sign-up",
+        "https://hope-v129.onrender.com/ngo/sign-up",
         formData
       );
 

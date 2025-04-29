@@ -84,7 +84,7 @@ function Login() {
       alert("Please ensure the password meets the required criteria");
     } else {
       networkRequest(
-        "http://localhost:3000/login",
+        "https://hope-v129.onrender.com/login",
         (response) => {
           localStorage.setItem("access_token", response.token);
           localStorage.setItem("user_id", response.user_id);
@@ -111,7 +111,7 @@ function Login() {
     }
 
     networkRequest(
-      "http://localhost:3000/signup",
+      "https://hope-v129.onrender.com/signup",
       (response) => {
         console.log(response);
         alert(response.message);

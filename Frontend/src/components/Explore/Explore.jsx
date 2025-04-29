@@ -13,12 +13,10 @@ function Explore() {
 
   const navigate = useNavigate();
 
-  
-
   useEffect(() => {
     // Fetch all NGOs
     axios
-      .get(`http://localhost:3000/ngo/get-all-ngo${userId}`)
+      .get(`https://hope-v129.onrender.com/ngo/get-all-ngo${userId}`)
       .then((response) => {
         setData(response.data);
         setLoading(false);
@@ -31,7 +29,7 @@ function Explore() {
 
     // Fetch join requests for this user
     axios
-      .get(`http://localhost:3000/ngo/get-users-requests/${userId}`)
+      .get(`https://hope-v129.onrender.com/ngo/get-users-requests/${userId}`)
       .then((response) => {
         const statusMap = {};
         response.data.forEach((request) => {
@@ -46,10 +44,13 @@ function Explore() {
 
   const handleJoinToggle = async (id) => {
     try {
-      const response = await axios.post("http://localhost:3000/ngo/join", {
-        userId,
-        ngoId: id,
-      });
+      const response = await axios.post(
+        "https://hope-v129.onrender.com/ngo/join",
+        {
+          userId,
+          ngoId: id,
+        }
+      );
 
       if (response.data.request.status === "Withdrawn") {
         setRequestStatus((prevStatus) => {
@@ -150,13 +151,13 @@ function Explore() {
                   : "Join Request"}
               </button>
               <button
-            className={`donate-now-button `}
-            onClick={() => {
-              navigate("/payment",{ state: { ngoId: item._id } });
-            }}
-          >
-            Donate Now
-          </button>
+                className={`donate-now-button `}
+                onClick={() => {
+                  navigate("/payment", { state: { ngoId: item._id } });
+                }}
+              >
+                Donate Now
+              </button>
             </div>
           ))}
         </div>

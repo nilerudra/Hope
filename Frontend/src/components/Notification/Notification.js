@@ -27,7 +27,7 @@ const Notifications = ({ id, toggle }) => {
     const fetchNotifications = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/notification/get-notifications/${id}`
+          `https://hope-v129.onrender.com/notification/get-notifications/${id}`
         );
         setNotifications(response.data);
       } catch (error) {

@@ -6,7 +6,7 @@ import SendIcon from "@mui/icons-material/Send";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 // Establish socket connection
-const socket = io("http://localhost:3000");
+const socket = io("https://hope-v129.onrender.com");
 
 export default function ChatContainer({ community, isOpen, onClose }) {
   const [chatInput, setChatInput] = useState("");
@@ -33,7 +33,9 @@ export default function ChatContainer({ community, isOpen, onClose }) {
   // Function to fetch messages from the server (polling)
   const fetchMessages = () => {
     if (isOpen && community?._id) {
-      fetch(`http://localhost:3000/messages/conversation/${community._id}`)
+      fetch(
+        `https://hope-v129.onrender.com/messages/conversation/${community._id}`
+      )
         .then((response) => response.json())
         .then((data) => {
           if (Array.isArray(data)) {
@@ -88,7 +90,7 @@ export default function ChatContainer({ community, isOpen, onClose }) {
       setChatMessages((prevMessages) => [...prevMessages, newMessage]);
 
       // Send message to the server (for persistence)
-      fetch("http://localhost:3000/messages/send", {
+      fetch("https://hope-v129.onrender.com/messages/send", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

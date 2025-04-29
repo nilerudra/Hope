@@ -44,25 +44,25 @@ const VolunteerProfile = () => {
 
         // Fetch user info
         const userResponse = await axios.get(
-          `http://localhost:3000/login/profile/${id}`
+          `https://hope-v129.onrender.com/login/profile/${id}`
         );
         setUserInfo(userResponse.data);
 
         // Fetch NGO count
         const ngosResponse = await axios.get(
-          `http://localhost:3000/login/${id}/connected-ngos/count`
+          `https://hope-v129.onrender.com/login/${id}/connected-ngos/count`
         );
         setNgoCount(ngosResponse.data.count);
 
         // Fetch posts
         const postsResponse = await axios.get(
-          `http://localhost:3000/login/profile/${id}/posts`
+          `https://hope-v129.onrender.com/login/profile/${id}/posts`
         );
         setPosts(postsResponse.data);
 
         // Fetch donations
         const donationAmt = await axios.get(
-          `http://localhost:3000/login/profile/${id}/donation`
+          `https://hope-v129.onrender.com/login/profile/${id}/donation`
         );
         setDonations(donationAmt.data);
 
@@ -80,7 +80,7 @@ const VolunteerProfile = () => {
   const handleViewNgos = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/login/profile/${id}/connected-ngos`
+        `https://hope-v129.onrender.com/login/profile/${id}/connected-ngos`
       );
       console.log(response);
       setConnectedNgos(response.data.connectedNgo); // Correct path to the connectedNgo data

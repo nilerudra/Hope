@@ -44,7 +44,9 @@ const NgoProfile = () => {
     const fetchNgoData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`http://localhost:3000/ngo/${ngoId}`);
+        const response = await axios.get(
+          `https://hope-v129.onrender.com/ngo/${ngoId}`
+        );
         setNgoInfo(response.data);
         setLoading(false);
       } catch (err) {
@@ -57,7 +59,7 @@ const NgoProfile = () => {
     const fetchVolunteerRequests = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/ngo/${ngoId}/volunteer-requests`
+          `https://hope-v129.onrender.com/ngo/${ngoId}/volunteer-requests`
         );
         setVolunteerRequests(response.data);
         console.log(response.data);
@@ -74,7 +76,7 @@ const NgoProfile = () => {
   const handleAcceptRequest = (requestId) => {
     // Make an API call to accept the request
     axios
-      .post(`http://localhost:3000/ngo/${ngoId}/accept-volunteer`, {
+      .post(`https://hope-v129.onrender.com/ngo/${ngoId}/accept-volunteer`, {
         requestId,
       })
       .then((response) => {
@@ -90,7 +92,9 @@ const NgoProfile = () => {
   const handleDenyRequest = (requestId) => {
     // Make an API call to deny the request
     axios
-      .post(`http://localhost:3000/ngo/${ngoId}/deny-volunteer`, { requestId })
+      .post(`https://hope-v129.onrender.com/ngo/${ngoId}/deny-volunteer`, {
+        requestId,
+      })
       .then((response) => {
         alert("Volunteer request denied!");
         window.location.reload();
@@ -113,7 +117,7 @@ const NgoProfile = () => {
   const handleViewDonations = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/ngo/${ngoId}/ngodonations`
+        `https://hope-v129.onrender.com/ngo/${ngoId}/ngodonations`
       );
       console.log(response.data);
       setDonationsData(response.data);
@@ -136,7 +140,7 @@ const NgoProfile = () => {
   const handleVolunteer = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/ngo/${ngoId}/volunteers`
+        `https://hope-v129.onrender.com/ngo/${ngoId}/volunteers`
       );
       setVolunteers(response.data);
       setVolunteersDialogOpen(true); // Open the dialog
