@@ -1,0 +1,125 @@
+.explore-main {
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+  font-family: Arial, sans-serif;
+}
+
+.explore-title {
+  color: #333;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.explore-top {
+  gap: 15px;
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.explore-search {
+  padding: 10px;
+  width: 250px;
+  font-size: 1rem;
+  transition: 0.3s;
+  border-radius: 5px;
+  border: 2px solid #ddd;
+}
+
+.explore-search:focus {
+  outline: none;
+  border-color: #ffd012;
+}
+
+.explore-buttons {
+  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.explore-btn {
+  color: #333;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 2px solid #ffd012;
+  background-color: #fff9e0;
+}
+
+.explore-btn.active,
+.explore-btn:hover {
+  color: #333;
+  background-color: #ffd012;
+}
+
+.explore-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.explore-card-grid {
+  gap: 20px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.explore-card {
+  padding: 20px;
+  transition: 0.3s;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #ffd012;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.explore-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  color: #333;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.card-detail {
+  color: #555;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.ngo-website {
+  margin: 10px;
+  color: #ffd012;
+  font-size: 0.9rem;
+  display: inline-block;
+  text-decoration: underline;
+}
+
+.join-btn {
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+  margin-top: 15px;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.join-btn.join {
+  color: #333;
+  background-color: #ffd012;
+}
+
+.join-btn.withdraw {
+  color: #fff;
+  background-color: #dc3545;
+}

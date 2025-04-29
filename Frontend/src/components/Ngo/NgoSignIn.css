@@ -1,0 +1,94 @@
+.ngo-sign-in {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.ngo-sign-in-container {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  max-width: 1200px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ngo-sign-in-logo {
+  flex: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffd012;
+  color: white;
+  text-align: center;
+}
+
+.ngo-sign-in-logo-image {
+  max-width: 60px;
+}
+
+.ngo-sign-in-site-name {
+  margin: 20px 0 10px;
+  font-size: 24px;
+}
+
+.ngo-sign-in-slogan {
+  font-size: 16px;
+}
+
+.ngo-sign-in-registration-form {
+  flex: 30%;
+  padding: 10% 15%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.ngo-sign-in-registration-form-title {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #ffd012;
+}
+
+.ngo-sign-in-slogan {
+  font-size: 15px;
+}
+
+.ngo-sign-in-registration-form-input {
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  outline-color: #ffd012;
+}
+
+.ngo-sign-in-registration-form-password-container {
+  position: relative;
+}
+
+.ngo-sign-in-registration-form-password-toggle-icon {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.ngo-sign-in-registration-form-submit-button {
+  padding: 10px;
+  background-color: #ffd012;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 5%;
+}
+
+.ngo-sign-in-registration-form-submit-button:hover {
+  background-color: #ffd012;
+}

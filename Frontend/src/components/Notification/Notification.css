@@ -1,0 +1,71 @@
+.notifications-container {
+  width: 250px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  z-index: 1000;
+  height: 300px; /* Fixed height for container */
+  display: flex;
+  flex-direction: column; /* Stack header and list vertically */
+  overflow-y: auto; /* Allows scrolling if notifications exceed container height */
+}
+
+.notification-header {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px; /* Space below header */
+}
+
+.notifications-list {
+  list-style: none;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1; /* Allows list to take up remaining space */
+  display: flex;
+  flex-direction: column; /* Stack notifications vertically */
+  overflow-y: auto; /* Adds scrolling within the list if needed */
+}
+
+.notification-item {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column; /* Stacks the content of each notification */
+  border-bottom: 1px solid #eee; /* Adds a border separator between notifications */
+  margin-bottom: 8px;
+}
+
+.notification-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.notification-item span {
+  color: #333;
+}
+
+.notification-item.unread {
+  font-weight: bold;
+  background-color: #f9f9f9; /* A background color for unread notifications */
+}
+
+.notification-item.read {
+  background-color: #fff; /* Standard background color for read notifications */
+}
+
+.notification-item:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.notifications-container p {
+  margin: 10px 0;
+  color: #666;
+  font-size: 14px;
+}

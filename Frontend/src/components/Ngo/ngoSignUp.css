@@ -1,0 +1,77 @@
+.ngodetailform {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 2%;
+}
+
+.registration-form {
+  background-color: white;
+  padding: 0px 50px 0px 30px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 80vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 6%;
+}
+
+.form-title {
+  font-size: 24px;
+  color: #ffd012;
+  grid-column: span 2;
+  text-align: center;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  outline-color: #ffd012;
+  border-radius: 5px;
+}
+
+.password-container {
+  position: relative;
+}
+
+.password-toggle-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.submit-button {
+  background-color: #ffd012;
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 50%;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  justify-self: center;
+  grid-column: span 2;
+}
+
+.submit-button:hover {
+  background-color: #fbc02d;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="number"],
+input[type="password"],
+textarea,
+select {
+  font-size: 14px;
+}

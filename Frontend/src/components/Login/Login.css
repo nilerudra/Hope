@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.sign-in-up-outer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  position: relative;
+  width: 900px;
+  height: 500px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.forms-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.signin-section {
+  width: 50%;
+  display: flex;
+  padding: 10% 8%;
+  align-items: center;
+  transition: all 0.6s ease-in-out;
+}
+
+.signup-section {
+  width: 50%;
+  display: flex;
+  padding: 10% 8%;
+  align-items: center;
+  transition: all 0.6s ease-in-out;
+}
+
+.signin-section {
+  background-color: #fff;
+  color: black;
+}
+
+.signup-section {
+  background-color: white;
+  justify-content: flex-end;
+  color: black;
+}
+
+.sign-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+}
+
+.sign-form h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ffd012;
+}
+
+.sign-form input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline-color: #ffd012;
+}
+
+.btn {
+  padding: 12px 24px;
+  background-color: #ffd012;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 25px;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ffd012;
+}
+
+/* Sliding Effect */
+.sign-in-active .forms-container {
+  transform: translateX(-50%);
+}
+
+.sign-up-active .forms-container {
+  transform: translateX(0%);
+}
+
+/* Overlay panel */
+.overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  pointer-events: none;
+}
+
+.overlay-panel {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  pointer-events: auto;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.overlay-left {
+  left: 0;
+  background-color: #ffd012;
+}
+
+.overlay-right {
+  right: 0;
+  background-color: #ffd012;
+}
+
+/* Hide overlay content when not active */
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Transition for opacity */
+.overlay-panel h1 {
+  font-size: 2rem;
+}
+
+.overlay-panel p {
+  margin: 20px 0;
+}
+
+.ghost-btn {
+  padding: 12px 24px;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.ghost-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-toggle-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.7em;
+  margin-bottom: 5px;
+}

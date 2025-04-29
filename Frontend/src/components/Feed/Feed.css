@@ -1,0 +1,83 @@
+/* Feed Page */
+.feed-container {
+  width: 60%;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.post-card {
+  border: 1px solid #e0e0e0;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.user-info h4 {
+  margin: 0;
+}
+
+.user-info p {
+  margin: 0;
+  color: gray;
+}
+
+.post-content p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.post-content img {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.hashtags {
+  margin-top: 10px;
+}
+
+.hashtag {
+  color: #0077ff;
+  margin-right: 10px;
+}
+
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.post-actions button {
+  padding: 10px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.post-actions button:hover {
+  background-color: #e0e0e0;
+}
+
+@media (max-width: 600px) {
+  .feed-container {
+    width: 80%;
+    margin: 0;
+  }
+  .post-card {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+}
